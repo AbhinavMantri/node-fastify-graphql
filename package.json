@@ -1,0 +1,23 @@
+{
+  "name": "fast-graph",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbhinavMantri/node-fastify-graphql.git"
+  },
+  "author": "Abhinav Mantri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbhinavMantri/node-fastify-graphql/issues"
+  },
+  "homepage": "https://github.com/AbhinavMantri/node-fastify-graphql#readme",
+  "dependencies": {
+    "fastify": "^3.17.0"
+  }
+}
