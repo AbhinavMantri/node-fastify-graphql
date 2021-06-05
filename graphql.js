@@ -1,13 +1,13 @@
 // const { ApolloServer, makeExecutableSchema } = require('apollo-server-fastify');
-const { queries, typeDefs, resolvers } = require('./schema');
+const schema = require('./schema');
 
-const schema = `
-    type Query {
-        ${queries}
-    }
+// const schema = `
+//     type Query {
+//         ${queries}
+//     }
 
-    ${typeDefs.map(t => `${t}\n`)}
-`;
+//     ${typeDefs.map(t => `${t}\n`)}
+// `;
 
 // module.exports = new ApolloServer({
 //     schema: makeExecutableSchema({
@@ -20,8 +20,5 @@ const schema = `
 
 module.exports = {
     schema,
-    resolvers: {
-        Query: resolvers,
-    },
     graphiql: true
 };

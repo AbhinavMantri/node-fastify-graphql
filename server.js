@@ -1,6 +1,6 @@
 const fastify = require('fastify')({ logger: true });
 const mercurius = require('mercurius');
-const {schema, resolvers} = require('./graphql');
+// const {schema, resolvers} = require('./graphql');
 
 // fastify.register(require('./routes/auth'), { prefix: '/auth' });
 
@@ -9,7 +9,7 @@ const {schema, resolvers} = require('./graphql');
 //     return {hello: 'world'};
 // });
 
-fastify.register(mercurius, { schema, resolvers });
+// fastify.register(mercurius, { schema, resolvers });
 
 // fastify.route({
 //     method: 'GET',
