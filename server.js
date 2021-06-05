@@ -1,33 +1,39 @@
 const fastify = require('fastify')({ logger: true });
+const mercurius = require('mercurius');
+const {schema, resolvers} = require('./graphql');
+
+// fastify.register(require('./routes/auth'), { prefix: '/auth' });
 
 // simple example
-fastify.get('/', async(request, reply) => {
-    return {hello: 'world'};
-});
+// fastify.get('/', async(request, reply) => {
+//     return {hello: 'world'};
+// });
 
-fastify.route({
-    method: 'GET',
-    url: '/route',
-    schema: {
-        queryString: {
-            name: {type: 'string'}
-        },
-        response: {
-            200: {
-                type: 'object',
-                properties: {
-                    hello: {type: 'string'}
-                }
-            }
-        }
-    },
-    preHandler: async(request, reply) => {
+fastify.register(mercurius, { schema, resolvers });
 
-    },
-    handler: async(request, reply) => {
-        return {hello: 'world route'};
-    }
-});
+// fastify.route({
+//     method: 'GET',
+//     url: '/route',
+//     schema: {
+//         queryString: {
+//             name: {type: 'string'}
+//         },
+//         response: {
+//             200: {
+//                 type: 'object',
+//                 properties: {
+//                     hello: {type: 'string'}
+//                 }
+//             }
+//         }
+//     },
+//     preHandler: async(request, reply) => {
+
+//     },
+//     handler: async(request, reply) => {
+//         return {hello: 'world route'};
+//     }
+// });
 
 const start = async() => {
     try {
