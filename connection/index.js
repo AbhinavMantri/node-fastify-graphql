@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize');
 const models = require('../models');
 
-const connection = new Sequelize('car-shop', 'root', 'root', {
+const connection = new Sequelize('car_shop', 'root', 'root', {
     host: 'localhost',
     dialect: 'mysql'
 });

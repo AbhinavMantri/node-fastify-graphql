@@ -1,6 +1,8 @@
-const fastify = require('fastify')({ logger: true });
-const mercurius = require('mercurius');
-// const {schema, resolvers} = require('./graphql');
+const fastify = require('fastify')();
+//({ logger: true });
+const gpl = require('mercurius');
+const schema = require('./schema');
+const connection = require('./connection');
 
 // fastify.register(require('./routes/auth'), { prefix: '/auth' });
 
@@ -9,7 +11,11 @@ const mercurius = require('mercurius');
 //     return {hello: 'world'};
 // });
 
-// fastify.register(mercurius, { schema, resolvers });
+const context = async () => {
+    return { connection };
+}
+
+fastify.register(gpl, { schema, graphiql: true, context });
 
 // fastify.route({
 //     method: 'GET',

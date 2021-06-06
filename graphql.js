@@ -1,5 +1,5 @@
 // const { ApolloServer, makeExecutableSchema } = require('apollo-server-fastify');
-const schema = require('./schema');
+// const schema = require('./schema');
 
 // const schema = `
 //     type Query {
@@ -18,7 +18,7 @@ const schema = require('./schema');
 //     }),
 // });
 
-module.exports = {
-    schema,
-    graphiql: true
-};
+// module.exports = {
+//     schema,
+//     graphiql: true
+// };
